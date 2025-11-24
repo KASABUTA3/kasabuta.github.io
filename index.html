@@ -2,159 +2,142 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>KASABUTA EMPIRE — Black Hopeless</title>
-  <meta name="description" content="KASABUTA3 (かさぶた) — Night Drive Creator / AI & VR & VIP Lifestyle">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KASABUTA ARCHIVE — Minimal Base</title>
+  <meta name="description" content="かさぶたの作品アーカイブを育てるためのミニマルなベースサイト。">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <div id="bg-canvas-wrap"><canvas id="bg-canvas"></canvas></div>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#">
-        <img src="/assets/img/logo.svg" alt="KASABUTA EMPIRE logo" class="brand-logo">
-        <div class="brand-meta">
-          <div class="brand-title">KASABUTA EMPIRE</div>
-          <div class="brand-sub">Black Hopeless</div>
-        </div>
-      </a>
-      <nav class="site-nav" id="site-nav">
+  <header class="site-header" id="top">
+    <div class="container nav-bar">
+      <div class="version">
+        <!-- バージョン番号は更新ごとにAIがここを書き換える。管理人はここを見て更新を確認する。 -->
+        <span class="version-label">v1.0.3</span>
+      </div>
+      <nav class="site-nav closed" id="site-nav">
+        <a href="#home">Home</a>
         <a href="#works">Works</a>
-        <a href="#about">About</a>
-        <a href="#featured">Featured</a>
+        <a href="#series">Series</a>
         <a href="#contact">Contact</a>
       </nav>
-      <button id="nav-toggle" aria-label="メニュー" class="nav-toggle">☰</button>
+      <button id="nav-toggle" class="nav-toggle" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="container hero-inner">
-        <div class="hero-left">
-          <h1 class="hero-title">KASABUTA EMPIRE</h1>
-          <p class="hero-sub">Night Drive Creator / AI Music • AI Art • VRChat • Web</p>
-          <div class="hero-cta">
-            <a href="#works" class="btn primary">Works</a>
-            <a href="#about" class="btn ghost">About</a>
-            <a href="#contact" class="btn outline">Contact</a>
-          </div>
+    <section class="section hero reveal" id="home">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow">KASABUTA3 / かさぶた</p>
+          <h1 class="hero-title">KASABUTA ARCHIVE</h1>
+          <p class="lead">ここは かさぶた（KASABUTA3）が作る音楽・イラスト・○○シリーズなどを少しずつ保管していく場所です。ミニマルな構造で、後からいくらでも増やせるようにしています。</p>
+          <p class="muted">まだ準備中のコンテンツが多いですが、少しずつ増やしていきます。</p>
         </div>
-        <div class="hero-right">
-          <img src="/assets/img/car.svg" alt="Car silhouette" class="car-illustration">
+        <div class="hero-card">
+          <p class="eyebrow">State</p>
+          <h3>Empty, but ready.</h3>
+          <p class="muted">コンテンツ追加・カテゴリ拡張・シリーズ投稿のための骨組みだけを残し、余白を多めにしたミニマルデザインです。将来のテスト導入や運用メモは README にまとめています。</p>
         </div>
       </div>
     </section>
 
-    <section id="about" class="section about reveal">
+    <section class="section reveal" id="works">
       <div class="container">
-        <h2 class="section-title">About / Profile</h2>
-        <div class="about-grid">
-          <div class="about-card glass">
-            <h3>KASABUTA3 / かさぶた</h3>
-            <p>トラックドライバー兼クリエイター。AI音楽、AI画像、VRChat、Web制作などを手がける。夜の首都高でインスピレーションを得つつ、ラグジュアリーな世界観を表現します。</p>
-          </div>
-          <div class="about-card stats glass">
-            <ul>
-              <li><strong>職業:</strong> トラックドライバー / クリエイター</li>
-              <li><strong>キーワード:</strong> Black Hopeless, K3 Empire, Celsior UCF30 VIP</li>
-              <li><strong>拠点:</strong> 夜の湾岸 / 都市</li>
+        <div class="section-head">
+          <p class="eyebrow">Works</p>
+          <h2 class="section-title">3カテゴリのベース</h2>
+          <p class="muted">音楽・イラスト・○○シリーズの箱だけ用意しています。カード内のリストに作品を追加していってください。</p>
+        </div>
+        <div class="card-grid">
+          <article class="card">
+            <header class="card-header">
+              <div>
+                <p class="eyebrow">Music</p>
+                <h3>音楽</h3>
+              </div>
+            </header>
+            <ul class="placeholder-list">
+              <!-- 作品を増やすときはこのリストに要素を追加する -->
+              <li class="empty">No items yet / まだ作品は登録されていません。</li>
             </ul>
+          </article>
+
+          <article class="card">
+            <header class="card-header">
+              <div>
+                <p class="eyebrow">Illustration</p>
+                <h3>イラスト</h3>
+              </div>
+            </header>
+            <ul class="placeholder-list">
+              <!-- 作品を増やすときはこのリストに要素を追加する -->
+              <li class="empty">No items yet / まだ作品は登録されていません。</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <header class="card-header">
+              <div>
+                <p class="eyebrow">○○シリーズ</p>
+                <h3>シリーズ</h3>
+              </div>
+            </header>
+            <ul class="placeholder-list">
+              <!-- 作品を増やすときはこのリストに要素を追加する -->
+              <li class="empty">No items yet / まだ作品は登録されていません。</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="series">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">○○シリーズ & 投稿エリア（仮）</p>
+          <h2 class="section-title">投稿・派生作品の予定地</h2>
+          <p class="muted">このエリアは、将来的に「かさぶた が作った ○○シリーズ」と、訪問者が投稿してくれた派生作品を並べる予定です。</p>
+        </div>
+        <div class="series-box">
+          <div class="coming-soon">Coming Soon</div>
+          <p>投稿・編集・削除は作者と管理人のみが行える想定です。現時点ではフォームや保存機能はまだありません。</p>
+          <div class="actions">
+            <a class="btn primary" href="#">投稿フォーム（準備中）</a>
+            <a class="btn ghost" href="#works">作品カテゴリを見る</a>
           </div>
+          <!-- // 将来、外部サービスやバックエンドと連携して、投稿・編集・削除の権限管理を実装する想定です。 -->
+          <!-- // 将来、テストを導入する場合は、この構成を前提にする -->
         </div>
       </div>
     </section>
 
-    <section id="works" class="section works reveal">
+    <section class="section reveal" id="contact">
       <div class="container">
-        <h2 class="section-title">Works / Projects</h2>
-        <div class="works-grid">
-          <!-- Cards -->
-          <article class="work-card glass">
-            <div class="work-icon">🎵</div>
-            <h4>Music</h4>
-            <p>AIを活用した夜向けトラック、VIPリミックスなど。</p>
-            <div class="card-cta"><a href="#" class="btn small">詳細</a></div>
-          </article>
-          <article class="work-card glass">
-            <div class="work-icon">🖼️</div>
-            <h4>AI Art</h4>
-            <p>ネオンとゴールドで構成されたグラフィックワーク。</p>
-            <div class="card-cta"><a href="#" class="btn small">詳細</a></div>
-          </article>
-          <article class="work-card glass">
-            <div class="work-icon">🕶️</div>
-            <h4>VRChat</h4>
-            <p>ワールドやアバター制作、夜景演出の実験プロジェクト。</p>
-            <div class="card-cta"><a href="#" class="btn small">詳細</a></div>
-          </article>
-          <article class="work-card glass">
-            <div class="work-icon">💻</div>
-            <h4>Web / Tools</h4>
-            <p>ポートフォリオやツール類の制作・公開。</p>
-            <div class="card-cta"><a href="#" class="btn small">詳細</a></div>
-          </article>
-          <article class="work-card glass">
-            <div class="work-icon">🪙</div>
-            <h4>Black Hopeless</h4>
-            <p>ブランドプロジェクト、コレクション展示用の領域。</p>
-            <div class="card-cta"><a href="#" class="btn small">詳細</a></div>
-          </article>
-          <article class="work-card glass">
-            <div class="work-icon">👑</div>
-            <h4>K3 Empire</h4>
-            <p>メインブランド・コアプロジェクト。</p>
-            <div class="card-cta"><a href="#" class="btn small">詳細</a></div>
-          </article>
+        <div class="section-head">
+          <p class="eyebrow">Contact / Links</p>
+          <h2 class="section-title">連絡先とコミュニティ</h2>
+          <p class="muted">質問・相談・連絡は以下のリンクから。SNSは今後追加できます。</p>
         </div>
-      </div>
-    </section>
-
-    <section id="featured" class="section featured reveal">
-      <div class="container">
-        <h2 class="section-title">Featured</h2>
-        <div class="featured-grid">
-          <div class="feature-card glass">
-            <img src="/assets/img/placeholder-feature.svg" alt="Featured" />
-            <div class="feature-body">
-              <h3>Featured Project</h3>
-              <p>ここに注目コンテンツの短い説明が入ります。画像は後から差し替え可能です。</p>
-              <a class="btn" href="#">View</a>
+        <div class="link-list">
+          <a class="link-card" href="https://discord.gg/vyXmVjPB" target="_blank" rel="noreferrer">
+            <i class="fa-brands fa-discord"></i>
+            <div>
+              <div class="link-label">Discordで連絡</div>
+              <div class="muted">コミュニティと相談用。招待リンクは固定。</div>
             </div>
-          </div>
-          <div class="feature-card glass small">
-            <img src="/assets/img/placeholder-feature.svg" alt="Featured" />
-            <div class="feature-body">
-              <h3>Featured 2</h3>
-              <p>ショートテキスト。</p>
-              <a class="btn" href="#">View</a>
+          </a>
+          <a class="link-card" href="https://x.com/kasabuta2025?s=21" target="_blank" rel="noreferrer">
+            <i class="fa-brands fa-x-twitter"></i>
+            <div>
+              <div class="link-label">X(Twitter)を見る</div>
+              <div class="muted">更新情報やDMはこちら。</div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="links" class="section links reveal">
-      <div class="container">
-        <h2 class="section-title">Links / Social</h2>
-        <div class="socials">
-          <a href="#" class="social-btn">X</a>
-          <a href="#" class="social-btn">YouTube</a>
-          <a href="#" class="social-btn">Discord</a>
-          <a href="#" class="social-btn">Booth</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section contact reveal">
-      <div class="container contact-inner">
-        <h2 class="section-title">Contact / CTA</h2>
-        <p>仕事依頼やコラボのご相談は X のDM、または下記のメールリンクへ。</p>
-        <div class="contact-cta">
-          <a href="#" class="btn primary">XのDMへ</a>
-          <a href="mailto:example@example.com" class="btn outline">メールを送る</a>
+          </a>
         </div>
       </div>
     </section>
@@ -162,11 +145,12 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div>© 2025 KASABUTA3</div>
-      <div class="footer-meta">Theme: Black × Gold × Neon</div>
+      <p class="muted">© 2025 KASABUTA3 — Minimal archive base.</p>
+      <p class="url-version">kasabuta3.github.io / v1.0.3</p>
+      <a href="#top" class="back-to-top">Back to top</a>
     </div>
   </footer>
 
-  <script src="/assets/js/main.js" defer></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
