@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Gold & Neon Lounge</title>
+  <desc id="desc">Abstract gold gradient lines for featured section</desc>
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#f6e0a0" />
+      <stop offset="0.5" stop-color="#d3b46f" />
+      <stop offset="1" stop-color="#8a6b2f" />
+    </linearGradient>
+    <linearGradient id="neon" x1="0" x2="1">
+      <stop offset="0" stop-color="#6ef2ff" />
+      <stop offset="1" stop-color="#b67bff" />
+    </linearGradient>
+    <radialGradient id="blur" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="rgba(110,242,255,0.25)" />
+      <stop offset="60%" stop-color="rgba(12,16,26,0.4)" />
+      <stop offset="100%" stop-color="rgba(4,6,13,0.9)" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="700" fill="#04060d" />
+  <rect width="1200" height="700" fill="url(#blur)" />
+  <g fill="none" stroke-linecap="round">
+    <path d="M-40 520 Q260 480 520 420 T1200 340" stroke="url(#g)" stroke-width="5" />
+    <path d="M-60 580 Q260 540 520 500 T1200 460" stroke="url(#g)" stroke-width="4" opacity="0.8" />
+    <path d="M-80 640 Q260 600 520 560 T1200 540" stroke="url(#g)" stroke-width="3" opacity="0.6" />
+    <path d="M120 220 Q360 180 620 200 T1200 230" stroke="url(#neon)" stroke-width="3" opacity="0.5" />
+    <path d="M0 300 Q280 250 520 260 T1200 300" stroke="url(#neon)" stroke-width="3" opacity="0.6" />
+  </g>
+  <rect x="80" y="120" width="320" height="120" rx="16" stroke="url(#g)" stroke-width="3" fill="rgba(255,255,255,0.02)" />
+  <text x="100" y="190" fill="#f6e0a0" font-family="Cinzel, serif" font-size="48" letter-spacing="6">BLACK</text>
+  <text x="100" y="240" fill="#cfd2dc" font-family="Noto Sans JP, sans-serif" font-size="28" letter-spacing="4">HOPELESS</text>
+</svg>
