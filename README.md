@@ -1,34 +1,22 @@
+# KASABUTA3 — GitHub Pages Site
+
+このリポジトリは GitHub Pages で公開するための静的ポートフォリオサイトを含みます。今回、以下のファイルを追加しました:
+
+- `index.html`
+- `assets/css/style.css`
+- `assets/js/main.js`
+- `assets/img/logo.svg`, `assets/img/car.svg`, `assets/img/placeholder-feature.svg`
+
+ローカルで確認する手順（簡易）:
+
+```bash
+# 1. リポジトリルートで簡易HTTPサーバを起動
+python3 -m http.server 8000
+# 2. ブラウザで開く
+# http://localhost:8000
+```
+
+GitHub Pages 有効化手順はこのリポジトリの `Settings > Pages` で `Branch: main` と `/(root)` を選択して保存してください。公開URLは `https://<your-username>.github.io/<repo-name>/` 形式になります（owner が `KASABUTA3` の場合、`https://KASABUTA3.github.io/kasabuta.github.io/` またはリポジトリ名が `username.github.io` の場合は `https://KASABUTA3.github.io/`）。
+
+詳しい変更内容はリポジトリ内の `index.html` と `assets/` を参照してください。
 # kasabuta.github.io
-
-ミニマルな作品アーカイブのベースサイトです。音楽・イラスト・○○シリーズをこれから育てる前提のため、余白を多めにしたシンプルな構成にしています。
-
-## 今回のバージョン
-- 表示中のバージョン: **v1.0.3**
-- ヘッダー左上のラベルとフッターの URL 併記を同じ番号に揃えています（URL の末尾に現在のリリースが分かるようにするため）。
-
-## 構成
-- `index.html` : ページ本体。ヘッダーにバージョン表記、Home / Works / Series / Contact のセクションを配置。
-- `assets/css/style.css` : ダークベースの軽量スタイル。カードやリンクの最低限の見た目をまとめています。
-- `assets/js/main.js` : モバイルナビの開閉、セクションのスクロールリビール、スムーススクロールを担当。
-
-## 編集のポイント
-- バージョン表記は `index.html` ヘッダー内の `v1.0.3` を書き換えてください（コメントで位置を明記）。フッターの URL 横の表記も同じ数字に揃えます。
-- 作品を追加するときは Works セクション内のリストに `<li>` を追加します。
-- ○○シリーズ & 投稿エリアは「Coming Soon」状態で、バックエンド連携を後から実装する想定のコメントを残しています。
-- 連絡先リンク（Discord / X）は Contact セクションのリンクカードを編集・追加してください。
-
-## 新しいバージョンへの更新手順
-1. `index.html` のヘッダー左上にある `vX.Y.Z` を 0.0.1 ずつ繰り上げる（コメントの近くにあります）。
-2. 同じファイル内フッターの `kasabuta3.github.io / vX.Y.Z` も同じ番号へ更新する。
-3. 必要に応じて README の「今回のバージョン」欄の数値を揃える。
-4. 変更を Git にコミットし、デフォルトブランチへプッシュすると GitHub Pages が自動で反映します（数分待つと `https://kasabuta3.github.io/` で新バージョンを確認できます）。
-
-## GitHub Pages 公開
-1. GitHub 上でこのリポジトリの **Settings > Pages** を開きます。
-2. **Source** を “Deploy from a branch” に設定し、デフォルトブランチを選択して保存します。
-3. 数分後に `https://kasabuta3.github.io/` で公開されます。
-
-## 今後の拡張例
-- Works の各カテゴリにカード要素を増やす、もしくは詳細ページへのリンクを追加する。
-- ○○シリーズ投稿フォームを外部サービスやバックエンドと接続し、投稿・編集・削除の権限管理を実装する。
-- 連絡先に YouTube / Booth などのリンクカードを追加する。
