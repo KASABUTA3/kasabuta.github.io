@@ -1,36 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" role="img" aria-labelledby="title desc">
-  <title id="title">Celsior-inspired silhouette</title>
-  <desc id="desc">Gold neon outline of a luxury sedan for KASABUTA EMPIRE</desc>
-  <defs>
-    <linearGradient id="gold" x1="0%" x2="100%">
-      <stop offset="0%" stop-color="#f6e0a0" />
-      <stop offset="50%" stop-color="#d3b46f" />
-      <stop offset="100%" stop-color="#8a6b2f" />
-    </linearGradient>
-    <linearGradient id="neon" x1="0%" x2="100%">
-      <stop offset="0%" stop-color="#6ef2ff" />
-      <stop offset="100%" stop-color="#b67bff" />
-    </linearGradient>
-    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="6" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
-  </defs>
-  <rect width="900" height="360" rx="16" fill="#04060d"/>
-  <g stroke="url(#gold)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)">
-    <path d="M80 226 C190 150 330 126 460 142 C610 162 720 162 810 140" />
-    <path d="M160 226 C168 190 190 152 230 140 L360 122 C440 110 540 114 640 130 L760 150 C788 156 806 172 812 196" opacity="0.65" />
-    <path d="M820 200 L840 200" />
-    <circle cx="230" cy="244" r="34" fill="#0a0a0f" stroke="url(#neon)" stroke-width="5" />
-    <circle cx="660" cy="244" r="34" fill="#0a0a0f" stroke="url(#neon)" stroke-width="5" />
-    <path d="M210 242 Q230 230 250 242" stroke="url(#gold)" />
-    <path d="M640 242 Q660 230 680 242" stroke="url(#gold)" />
-    <path d="M300 190 Q360 150 440 150 Q520 150 620 178" stroke="url(#neon)" />
-    <path d="M360 182 L520 182" stroke="url(#gold)" />
-    <path d="M120 206 C200 184 280 172 360 170" opacity="0.35" />
-    <path d="M500 170 C620 170 700 182 800 204" opacity="0.35" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" preserveAspectRatio="xMidYMid meet">
+  <g fill="none" stroke="url(#gold)" stroke-width="3" stroke-linecap="round">
+    <defs>
+      <linearGradient id="gold" x1="0" x2="1">
+        <stop offset="0" stop-color="#ffdca1"/>
+        <stop offset="1" stop-color="#b8934a"/>
+      </linearGradient>
+    </defs>
+    <path d="M40 200 C120 120, 240 100, 340 120 C440 140, 560 140, 700 120 L740 120" stroke-width="4"/>
+    <circle cx="180" cy="210" r="18" fill="#0b0b0b" stroke="#b8934a" />
+    <circle cx="560" cy="210" r="18" fill="#0b0b0b" stroke="#b8934a" />
   </g>
 </svg>
