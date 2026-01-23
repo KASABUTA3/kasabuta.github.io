@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>KASABUTA GALLERY</title>
-  <meta name="description" content="KASABUTA の創作物ギャラリーブラウザ。公開URLから誰でも閲覧できます。">
+  <meta name="description" content="KASABUTA の創作物ギャラリー。公開URLから誰でも閲覧できます。">
   <base href="./">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,10 +30,10 @@
       <div class="hero-content fade-in">
         <p class="eyebrow">Public Gallery</p>
         <h1 id="portal-title">KASABUTA GALLERY</h1>
-        <p class="subhead">創作物を一般公開するためのブラウザ。URL ひとつで誰でも閲覧できます。</p>
+        <p class="subhead">創作物を一般公開するためのギャラリーブラウザ。URL ひとつで誰でも閲覧できます。</p>
         <div class="hero-actions">
           <a class="primary-btn" href="#gallery">ギャラリーを見る</a>
-          <a class="ghost-btn" href="#guideline">閲覧ガイド</a>
+          <a class="ghost-btn" href="#guide">公開ガイド</a>
         </div>
         <div class="hero-note">
           <span class="status-dot" aria-hidden="true"></span>
@@ -46,12 +46,12 @@
       <div class="section-head">
         <div>
           <p class="eyebrow">Browse</p>
-          <h2 id="gallery-title">創作物ギャラリーブラウザ</h2>
-          <p class="section-lead">ジャンルやタグで絞り込み、公開作品を一覧でチェックできます。作品の詳細ページや配布リンクへの導線もまとめています。</p>
+          <h2 id="gallery-title">創作物ギャラリー</h2>
+          <p class="section-lead">ジャンルやキーワードで絞り込み、公開作品を一覧でチェックできます。各カードから配布・視聴ページへ直接アクセス可能です。</p>
         </div>
         <div class="section-meta" aria-label="Version">
           <span class="meta-label">Version</span>
-          <strong class="version" data-version>v0.3.0</strong>
+          <strong class="version" data-version>v0.4.0</strong>
         </div>
       </div>
 
@@ -69,21 +69,21 @@
           <button class="filter-chip" data-filter="writing">文章</button>
         </div>
         <div class="gallery-status" aria-live="polite">
-          <p class="result-count" id="result-count">6件の作品が公開中</p>
+          <p class="result-count" id="result-count">読み込み中...</p>
           <p class="status-note">公開URLから誰でも閲覧可能。リンク先は随時更新されます。</p>
         </div>
       </div>
 
-      <div class="gallery-grid" id="gallery-grid" aria-live="polite">
-        <article class="gallery-card" data-tags="illust,public">
-          <div class="card-visual">
-            <span class="badge">ILLUST</span>
-          </div>
-          <div class="card-body">
-            <h3>夜明けのアーカイブ</h3>
-            <p>水彩の質感で描いた夜明けの都市。公開用高解像度セット。</p>
-            <div class="card-meta">
-              <span>2025.03</span>
+    <section class="guideline" id="guide" aria-labelledby="guide-title">
+          <h2 id="guide-title">公開ギャラリー運用ガイド</h2>
+          <p class="section-lead">「更新しやすい」「見つけやすい」「共有しやすい」を重視した公開設計です。作品追加の流れをここにまとめています。</p>
+          <h3>1. 作品情報を整理</h3>
+          <p>タイトル・概要・タグ・公開リンクを準備しておくと、一覧の質が安定します。</p>
+          <h3>2. JSの配列を更新</h3>
+          <p><code>assets/js/main.js</code> の作品データに追加するだけでギャラリーへ反映されます。</p>
+          <h3>3. GitHub Pagesで公開</h3>
+          <p>Settings → Pages で main ブランチの /(root) を指定し、公開URLを共有してください。</p>
+      <span class="footer-version">Version: <strong data-version>v0.4.0</strong></span>
               <a href="#" class="card-link">詳細ページ</a>
             </div>
           </div>

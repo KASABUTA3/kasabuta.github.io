@@ -1,20 +1,12 @@
 (function(){
-  const VERSION = 'v0.3.0';
-
-  function $(selector, scope = document) {
-    return scope.querySelector(selector);
-  }
-
-  function $all(selector, scope = document) {
-    return Array.from(scope.querySelectorAll(selector));
-  }
-
-  function hydrateVersionLabels() {
-    $all('[data-version]').forEach(el => {
-      el.textContent = VERSION;
-    });
-    console.log(`KASABUTA GALLERY version: ${VERSION}`);
-  }
+  const VERSION = 'v0.4.0';
+  const TAG_LABELS = {
+    illust: 'ILLUST',
+    comic: 'COMIC',
+    music: 'MUSIC',
+    video: 'VIDEO',
+    writing: 'WRITING',
+  };
 
   function getSearchValue() {
     const search = $('#gallery-search');
@@ -42,7 +34,22 @@
       : `${visibleCount}件の作品が公開中`;
   }
 
-  function applyFilters() {
+  function $(selector, scope = document) {
+    return scope.querySelector(selector);
+  }
+
+  function $all(selector, scope = document) {
+    return Array.from(scope.querySelectorAll(selector));
+  }
+
+  function hydrateVersionLabels() {
+    $all('[data-version]').forEach(el => {
+      el.textContent = VERSION;
+    });
+    console.log(`KASABUTA GALLERY version: ${VERSION}`);
+  }
+
+        <span class="badge">${TAG_LABELS[work.tag] || work.tag.toUpperCase()}</span>
     const cards = $all('.gallery-card');
     const empty = $('#gallery-empty');
     const activeFilter = getActiveFilter();
