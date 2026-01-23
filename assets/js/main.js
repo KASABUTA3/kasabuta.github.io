@@ -1,54 +1,91 @@
 (function(){
-  const VERSION = 'v0.1.0';
+  const VERSION = 'v0.3.0';
 
   function $(selector, scope = document) {
     return scope.querySelector(selector);
   }
 
-  function createCard({ title, description, author }) {
-    const article = document.createElement('article');
-    article.className = 'series-card fade-in';
-    article.innerHTML = `
-      <header>
-        <h3>${title}</h3>
-        <span class="author">by ${author}</span>
-      </header>
-      <p>${description}</p>
-    `;
-    return article;
-  }
-
-  function handleFormSubmit(event) {
-    event.preventDefault();
-    const form = event.target;
-    const title = form.title.value.trim();
-    const description = form.description.value.trim();
-    const author = form.author.value.trim();
-
-    if (!title || !description || !author) return;
-
-    const cards = $('#series-cards');
-    const card = createCard({ title, description, author });
-    cards.prepend(card);
-
-    form.reset();
-    form.title.focus();
+  function $all(selector, scope = document) {
+    return Array.from(scope.querySelectorAll(selector));
   }
 
   function hydrateVersionLabels() {
-    document.querySelectorAll('[data-version]').forEach(el => {
+    $all('[data-version]').forEach(el => {
       el.textContent = VERSION;
     });
-    console.log(`KASABUTA PORTAL version: ${VERSION}`);
+    console.log(`KASABUTA GALLERY version: ${VERSION}`);
+  }
+
+  function getSearchValue() {
+    const search = $('#gallery-search');
+    return search ? search.value.trim().toLowerCase() : '';
+  }
+
+  function getActiveFilter() {
+    const active = $('.filter-chip.is-active');
+    return active ? active.dataset.filter : 'all';
+  }
+
+  function matchesFilter(card, activeFilter, query) {
+    const tags = (card.dataset.tags || '').toLowerCase().split(',');
+    const text = card.textContent.toLowerCase();
+    const tagMatch = activeFilter === 'all' || tags.includes(activeFilter);
+    const queryMatch = !query || text.includes(query);
+    return tagMatch && queryMatch;
+  }
+
+  function updateResultCount(visibleCount) {
+    const result = $('#result-count');
+    if (!result) return;
+    result.textContent = visibleCount === 0
+      ? '該当する作品がありません'
+      : `${visibleCount}件の作品が公開中`;
+  }
+
+  function applyFilters() {
+    const cards = $all('.gallery-card');
+    const empty = $('#gallery-empty');
+    const activeFilter = getActiveFilter();
+    const query = getSearchValue();
+
+    let visibleCount = 0;
+    cards.forEach(card => {
+      const isVisible = matchesFilter(card, activeFilter, query);
+      card.hidden = !isVisible;
+      if (isVisible) visibleCount += 1;
+    });
+
+    if (empty) {
+      empty.hidden = visibleCount !== 0;
+    }
+
+    updateResultCount(visibleCount);
+  }
+
+  function handleFilterClick(event) {
+    const button = event.target.closest('.filter-chip');
+    if (!button) return;
+
+    $all('.filter-chip').forEach(chip => chip.classList.remove('is-active'));
+    button.classList.add('is-active');
+    applyFilters();
   }
 
   function attachEvents() {
-    const form = $('#series-form');
-    if (form) form.addEventListener('submit', handleFormSubmit);
+    const search = $('#gallery-search');
+    if (search) {
+      search.addEventListener('input', applyFilters);
+    }
+
+    const filterGroup = $('.filter-group');
+    if (filterGroup) {
+      filterGroup.addEventListener('click', handleFilterClick);
+    }
   }
 
   document.addEventListener('DOMContentLoaded', () => {
     hydrateVersionLabels();
     attachEvents();
+    applyFilters();
   });
 })();
