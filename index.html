@@ -3,18 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>KASABUTA PORTAL</title>
-  <meta name="description" content="KASABUTA の個人サイト兼コミュニティ拠点">
+  <title>KASABUTA GALLERY</title>
+  <meta name="description" content="KASABUTA の創作物ギャラリー。公開URLから誰でも閲覧できます。">
+  <base href="./">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
   <header class="site-header">
     <div class="header-inner">
       <div class="brand">
         <span class="brand-title">KASABUTA</span>
+        <span class="brand-subtitle">Creative Gallery Browser</span>
       </div>
       <nav class="external-links" aria-label="External links">
         <a class="link-btn" href="https://x.com/kasabuta2025?s=21" target="_blank" rel="noreferrer">X</a>
@@ -26,53 +28,170 @@
   <main>
     <section class="hero" aria-labelledby="portal-title">
       <div class="hero-content fade-in">
-        <h1 id="portal-title">KASABUTA PORTAL</h1>
-        <p class="subhead">個人サイト兼コミュニティ拠点 — Royal Black テーマ</p>
+        <p class="eyebrow">Public Gallery</p>
+        <h1 id="portal-title">KASABUTA GALLERY</h1>
+        <p class="subhead">創作物を一般公開するためのギャラリーブラウザ。URL ひとつで誰でも閲覧できます。</p>
+        <div class="hero-actions">
+          <a class="primary-btn" href="#gallery">ギャラリーを見る</a>
+          <a class="ghost-btn" href="#guide">公開ガイド</a>
+        </div>
+        <div class="hero-note">
+          <span class="status-dot" aria-hidden="true"></span>
+          公開中の作品はタグ検索で探せます。
+        </div>
       </div>
     </section>
 
-    <section class="series" aria-labelledby="series-title">
+    <section class="gallery" id="gallery" aria-labelledby="gallery-title">
       <div class="section-head">
         <div>
-          <p class="eyebrow">Top</p>
-          <h2 id="series-title">◯◯シリーズ投稿欄（仮）</h2>
-          <p class="section-lead">タイトル・説明・作者名を入力するとカードが生成されます。保存は未実装で、今後のバックエンド接続に備えています。</p>
+          <p class="eyebrow">Browse</p>
+          <h2 id="gallery-title">創作物ギャラリー</h2>
+          <p class="section-lead">ジャンルやキーワードで絞り込み、公開作品を一覧でチェックできます。各カードから配布・視聴ページへ直接アクセス可能です。</p>
         </div>
         <div class="section-meta" aria-label="Version">
           <span class="meta-label">Version</span>
-          <strong class="version" data-version>v0.1.0</strong>
+          <strong class="version" data-version>v0.4.0</strong>
         </div>
       </div>
 
-      <form id="series-form" class="series-form" autocomplete="off">
-        <div class="form-grid">
-          <label class="field">
-            <span>タイトル</span>
-            <input type="text" name="title" placeholder="シリーズ名" required>
-          </label>
-          <label class="field">
-            <span>説明</span>
-            <textarea name="description" rows="2" placeholder="どんな内容か短く書いてください" required></textarea>
-          </label>
-          <label class="field">
-            <span>作者名</span>
-            <input type="text" name="author" placeholder="Your name" required>
-          </label>
+      <div class="gallery-controls" role="search">
+        <label class="field">
+          <span>検索</span>
+          <input type="search" id="gallery-search" placeholder="作品名・概要・タグで検索">
+        </label>
+        <div class="filter-group" aria-label="タグフィルター">
+          <button class="filter-chip is-active" data-filter="all">すべて</button>
+          <button class="filter-chip" data-filter="illust">イラスト</button>
+          <button class="filter-chip" data-filter="comic">コミック</button>
+          <button class="filter-chip" data-filter="music">音楽</button>
+          <button class="filter-chip" data-filter="video">映像</button>
+          <button class="filter-chip" data-filter="writing">文章</button>
         </div>
-        <button type="submit" class="submit-btn">カードを追加</button>
-      </form>
+        <div class="gallery-status" aria-live="polite">
+          <p class="result-count" id="result-count">読み込み中...</p>
+          <p class="status-note">公開URLから誰でも閲覧可能。リンク先は随時更新されます。</p>
+        </div>
+      </div>
 
-      <div id="series-cards" class="series-cards" aria-live="polite"></div>
+    <section class="guideline" id="guide" aria-labelledby="guide-title">
+          <h2 id="guide-title">公開ギャラリー運用ガイド</h2>
+          <p class="section-lead">「更新しやすい」「見つけやすい」「共有しやすい」を重視した公開設計です。作品追加の流れをここにまとめています。</p>
+          <h3>1. 作品情報を整理</h3>
+          <p>タイトル・概要・タグ・公開リンクを準備しておくと、一覧の質が安定します。</p>
+          <h3>2. JSの配列を更新</h3>
+          <p><code>assets/js/main.js</code> の作品データに追加するだけでギャラリーへ反映されます。</p>
+          <h3>3. GitHub Pagesで公開</h3>
+          <p>Settings → Pages で main ブランチの /(root) を指定し、公開URLを共有してください。</p>
+      <span class="footer-version">Version: <strong data-version>v0.4.0</strong></span>
+              <a href="#" class="card-link">詳細ページ</a>
+            </div>
+          </div>
+        </article>
+        <article class="gallery-card" data-tags="comic,public">
+          <div class="card-visual">
+            <span class="badge">COMIC</span>
+          </div>
+          <div class="card-body">
+            <h3>灰色の街区</h3>
+            <p>週刊連載の試し読み。世界観と人物設定をまとめた導入回。</p>
+            <div class="card-meta">
+              <span>2025.02</span>
+              <a href="#" class="card-link">試し読み</a>
+            </div>
+          </div>
+        </article>
+        <article class="gallery-card" data-tags="music,public">
+          <div class="card-visual">
+            <span class="badge">MUSIC</span>
+          </div>
+          <div class="card-body">
+            <h3>Neon Pulse</h3>
+            <p>シンセを中心にした公開BGM。商用OKライセンス版。</p>
+            <div class="card-meta">
+              <span>2025.01</span>
+              <a href="#" class="card-link">試聴リンク</a>
+            </div>
+          </div>
+        </article>
+        <article class="gallery-card" data-tags="video,public">
+          <div class="card-visual">
+            <span class="badge">VIDEO</span>
+          </div>
+          <div class="card-body">
+            <h3>短編映像「紙雨」</h3>
+            <p>2分30秒のモーション映像。YouTube 公開用編集。</p>
+            <div class="card-meta">
+              <span>2024.12</span>
+              <a href="#" class="card-link">視聴ページ</a>
+            </div>
+          </div>
+        </article>
+        <article class="gallery-card" data-tags="writing,public">
+          <div class="card-visual">
+            <span class="badge">WRITING</span>
+          </div>
+          <div class="card-body">
+            <h3>星降る街の散文集</h3>
+            <p>日常の断片をまとめた公開PDF。読み物として共有。</p>
+            <div class="card-meta">
+              <span>2024.11</span>
+              <a href="#" class="card-link">読む</a>
+            </div>
+          </div>
+        </article>
+        <article class="gallery-card" data-tags="illust,public">
+          <div class="card-visual">
+            <span class="badge">ILLUST</span>
+          </div>
+          <div class="card-body">
+            <h3>光の回廊</h3>
+            <p>展示会向けのキービジュアル。フルサイズDL可能。</p>
+            <div class="card-meta">
+              <span>2024.10</span>
+              <a href="#" class="card-link">ダウンロード</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="gallery-empty" id="gallery-empty" hidden>
+        <p>該当する作品が見つかりませんでした。検索条件を変更してください。</p>
+      </div>
+    </section>
+
+    <section class="guideline" id="guideline" aria-labelledby="guideline-title">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Guide</p>
+          <h2 id="guideline-title">公開ギャラリーの使い方</h2>
+          <p class="section-lead">一般公開向けに作品情報を整理しています。SNS や配布ページに飛べるリンクをまとめることで、初めての方でも迷わずたどり着けます。</p>
+        </div>
+      </div>
+      <div class="guide-grid">
+        <article class="guide-card">
+          <h3>URL ひとつで共有</h3>
+          <p>GitHub Pages の公開URLにまとめているので、リンクを送るだけで誰でも閲覧できます。</p>
+        </article>
+        <article class="guide-card">
+          <h3>タグ検索で発見</h3>
+          <p>ジャンル別のタグと検索で、見たい作品だけを素早く探せます。</p>
+        </article>
+        <article class="guide-card">
+          <h3>リンク先を更新</h3>
+          <p>配布ページや動画URLを差し替えるだけで、最新の公開先へ誘導できます。</p>
+        </article>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <span class="footer-version">Version: <strong data-version>v0.1.0</strong></span>
+      <span class="footer-version">Version: <strong data-version>v0.3.0</strong></span>
       <span class="copyright">© 2025 KASABUTA</span>
     </div>
   </footer>
 
-  <script src="/assets/js/main.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
