@@ -5,15 +5,21 @@
     return scope.querySelector(selector);
   }
 
+  function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+  }
+
   function createCard({ title, description, author }) {
     const article = document.createElement('article');
     article.className = 'series-card fade-in';
     article.innerHTML = `
       <header>
-        <h3>${title}</h3>
-        <span class="author">by ${author}</span>
+        <h3>${escapeHtml(title)}</h3>
+        <span class="author">by ${escapeHtml(author)}</span>
       </header>
-      <p>${description}</p>
+      <p>${escapeHtml(description)}</p>
     `;
     return article;
   }
